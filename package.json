@@ -1,5 +1,6 @@
 {
   "name": "@bizon/selling-partner-api-sdk",
+  "version": "1.0.0",
   "private": true,
   "description": "A modularized SDK library for Amazon Selling Partner API (fully typed in TypeScript)",
   "repository": "git@github.com:bizon/selling-partner-api-sdk.git",
