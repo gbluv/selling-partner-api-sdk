@@ -2,7 +2,6 @@
 
 import process from 'process'
 
-import {sync as readPackageJson} from 'read-pkg-up'
 import type {Credentials} from '@aws-sdk/client-sts'
 import type {RequireExactlyOne, SetOptional} from 'type-fest'
 
@@ -11,7 +10,6 @@ import {SecurityTokenService} from './security-token-service'
 import {SellingPartnerApiAuthError} from './error'
 import type {AuthorizationScope} from './access-token'
 
-const {packageJson} = readPackageJson()!
 
 export interface SellingPartnerAuthParameters {
   clientId?: string
@@ -53,7 +51,7 @@ export class SellingPartnerApiAuth {
     const roleSessionName =
       parameters.role?.sessionName ||
       process.env.AWS_ROLE_SESSION_NAME ||
-      `${packageJson.name.replace('/', '-')}@${packageJson.version}`
+      `@sp-api-sdk-auth@1.9.16`
 
     let role = null
 
